@@ -22,7 +22,7 @@ import java.util.List;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
     List<Model> waiting_list,accepted_list,cancelled_list;
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2,R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_3, R.string.tab_text_2,R.string.tab_text_1};
 
 
     private final Context mContext;
@@ -42,13 +42,14 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         switch (position){
             case 0:
-                return new PlaceholderFragment(waiting_list);
+                return new PlaceholderFragment(cancelled_list);
+
 
             case 1:
                 return new PlaceholderFragment(accepted_list);
 
             case 2:
-                return new PlaceholderFragment(cancelled_list);
+                return new PlaceholderFragment(waiting_list);
 
         }
         return null;
