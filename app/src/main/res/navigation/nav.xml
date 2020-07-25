@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/my">
+
+    <fragment
+        android:id="@+id/my"
+        android:name="com.example.creativeminds_first_task.ui.my"
+        android:label="fragment_my"
+        tools:layout="@layout/fragment_my" >
+        <action
+            android:id="@+id/action_my_to_others"
+            app:destination="@id/others"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/fade_in_left"
+            app:popExitAnim="@anim/fade_out_right"
+            app:popUpTo="@id/my"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/others"
+        android:name="com.example.creativeminds_first_task.ui.others"
+        android:label="fragment_others"
+        tools:layout="@layout/fragment_others" >
+        <action
+            android:id="@+id/action_others_to_my"
+            app:destination="@id/my"
+            app:enterAnim="@anim/fade_in_left"
+            app:exitAnim="@anim/fade_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/fade_out_right"
+            app:popUpTo="@id/others"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
